@@ -94,6 +94,7 @@ class OrgConfig(BaseConfig):
 
         Also refreshes user and org info that is cached in the org config.
         """
+        #hello
         if not SKIP_REFRESH:
             SFDX_CLIENT_ID = os.environ.get("SFDX_CLIENT_ID")
             SFDX_HUB_KEY = os.environ.get("SFDX_HUB_KEY")
