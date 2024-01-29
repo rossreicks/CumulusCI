@@ -94,11 +94,11 @@ class OrgConfig(BaseConfig):
 
         Also refreshes user and org info that is cached in the org config.
         """
-        #hello
+        # hello
         if not SKIP_REFRESH:
             SFDX_CLIENT_ID = os.environ.get("SFDX_CLIENT_ID")
             SFDX_HUB_KEY = os.environ.get("SFDX_HUB_KEY")
-            if SFDX_CLIENT_ID and SFDX_HUB_KEY:
+            if not (SFDX_CLIENT_ID and SFDX_HUB_KEY):
                 auth_url = SANDBOX_LOGIN_URL if self.force_sandbox else self.id
                 info = jwt_session(
                     SFDX_CLIENT_ID,
