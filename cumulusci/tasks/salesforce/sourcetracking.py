@@ -289,6 +289,8 @@ def retrieve_components(
             package_xml_path = stack.enter_context(temporary_dir(chdir=False))
             _write_manifest(components, package_xml_path, api_version)
 
+            print(org_config.access_token)
+            print(org_config.instance_url)
             # Retrieve specified components in DX format
             sfdx(
                 "force:source:retrieve",
@@ -301,6 +303,7 @@ def retrieve_components(
                     os.path.join(package_xml_path, "package.xml"),
                     "-w",
                     "5",
+                    "--dev-debug",
                 ],
                 capture_output=False,
                 check_return=True,
