@@ -57,7 +57,9 @@ def jwt_session(
 
     if is_sandbox:  # pragma: no cover
         aud = SANDBOX_LOGIN_URL
-
+    print(aud)
+    print(client_id)
+    print(username)
     payload = {
         "alg": "RS256",
         "iss": client_id,
@@ -66,6 +68,7 @@ def jwt_session(
         "exp": timegm(datetime.utcnow().utctimetuple()),
     }
     encoded_jwt = jwt.encode(payload, private_key, algorithm="RS256")
+    print(encoded_jwt)
     data = {
         "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
         "assertion": encoded_jwt,
