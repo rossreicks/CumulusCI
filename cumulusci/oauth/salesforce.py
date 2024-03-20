@@ -31,6 +31,7 @@ def jwt_session(
     :param username: Username to authenticate as
     :param url: Org's instance_url
     """
+    print(PROD_LOGIN_URL)
     if auth_url:
         aud = (
             SANDBOX_LOGIN_URL
