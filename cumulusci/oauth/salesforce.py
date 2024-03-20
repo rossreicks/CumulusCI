@@ -37,6 +37,7 @@ def jwt_session(
             if auth_url.startswith(SANDBOX_LOGIN_URL)
             else PROD_LOGIN_URL
         )
+        print(PROD_LOGIN_URL)
     # check for enhanced domains (instanceless URLs)
     # https://developer.salesforce.com/docs/atlas.en-us.identityImplGuide.meta/identityImplGuide/domain_name_enhanced.htm
     elif url and ENHANCED_DOMAIN_SUBSTRING in url:
