@@ -31,6 +31,7 @@ def jwt_session(
     :param username: Username to authenticate as
     :param url: Org's instance_url
     """
+    print(os.environ.get("SF_PROD_LOGIN_URL"))
     print(PROD_LOGIN_URL)
     if auth_url:
         aud = (
