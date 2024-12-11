@@ -109,7 +109,6 @@ class VlocitySimpleJobTask(VlocityBaseTask, ABC):
             "org",
             "login",
             "access-token",
-            "--no-prompt",
             "--alias",
             f"{VBT_SF_ALIAS}",
             "--instance-url",
